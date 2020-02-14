@@ -11,11 +11,10 @@ import {MatchingQuizMode} from "../types/MatchingQuizMode";
 	styleUrls: ["./matching-quiz-editor.component.css"]
 })
 export class MatchingQuizEditorComponent {
-	private internalUrl: string = null;
 	public url: SafeUrl = null;
-
 	@Input()
 	public quiz: Wrapper<IQuizAndMode>;
+	private internalUrl: string = null;
 
 	public constructor(private readonly sanitizer: DomSanitizer) {
 	}

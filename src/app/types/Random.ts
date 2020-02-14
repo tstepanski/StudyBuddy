@@ -7,7 +7,7 @@ export class Random {
 	}
 
 	public static shuffle<T>(array: T[]): T[] {
-		const newArray = array.slice()	;
+		const newArray = array.slice();
 
 		for (let outerIndex = newArray.length - 1; outerIndex > 0; outerIndex--) {
 			const innerIndex = Math.floor(Math.random() * (outerIndex + 1));

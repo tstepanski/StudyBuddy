@@ -1,35 +1,35 @@
 <h3>{{quiz.value.quiz.name}}</h3>
 <div class="game-button-area">
-	<button class="btn btn-primary"
-			(click)="startNew()">New Game
+	<button (click)="startNew()"
+			class="btn btn-primary">New Game
 	</button>
-	<button class="btn btn-success"
+	<button (click)="score()"
 			*ngIf="wordsList.length > 0"
-			(click)="score()">Score
+			class="btn btn-success">Score
 	</button>
 </div>
-<div class="row"
-	 *ngIf="wordsList.length > 0">
+<div *ngIf="wordsList.length > 0"
+	 class="row">
 	<div class="col-md-3">
 		<h4>Words</h4>
 
-		<div cdkDropList
-			 class="matching-quiz-game-word-list"
-			 (cdkDropListDropped)="onWordDrop($event)">
-			<div class="matching-quiz-game-word"
-				 *ngFor="let entry of wordsList"
-				 cdkDrag>{{entry.word}}</div>
+		<div (cdkDropListDropped)="onWordDrop($event)"
+			 cdkDropList
+			 class="matching-quiz-game-word-list">
+			<div *ngFor="let entry of wordsList"
+				 cdkDrag
+				 class="matching-quiz-game-word">{{entry.word}}</div>
 		</div>
 	</div>
 	<div class="col-md-3">
 		<h4>Definitions</h4>
 
-		<div cdkDropList
-			 class="matching-quiz-game-word-list"
-			 (cdkDropListDropped)="onDefinitionDrop($event)">
-			<div class="matching-quiz-game-word"
-				 *ngFor="let entry of definitionsList"
-				 cdkDrag>{{entry.definition}}</div>
+		<div (cdkDropListDropped)="onDefinitionDrop($event)"
+			 cdkDropList
+			 class="matching-quiz-game-word-list">
+			<div *ngFor="let entry of definitionsList"
+				 cdkDrag
+				 class="matching-quiz-game-word">{{entry.definition}}</div>
 		</div>
 	</div>
 </div>
