@@ -1,0 +1,30 @@
+<h1>Study Buddy</h1>
+<h2>Matching Quiz</h2>
+<div class="matching-quiz-load-button-area">
+	<button type="button"
+			class="btn btn-outline-secondary"
+			(click)="createNew()">Create New
+	</button>
+	<button type="button"
+			class="btn btn-outline-secondary"
+			[ngClass]="{
+				'hidden': quiz.value.quiz === null || quiz.value.mode === 'EDIT'
+			}"
+			(click)="setToEdit()">Edit
+	</button>
+	<input type="file"
+		   class="hidden"
+		   accept=".json,application/json"
+		   [id]="id"
+		   (change)="loadFile($event)"/>
+	<button type="button"
+			class="btn btn-outline-secondary"
+			(click)="showOpenFileDialog()">Open
+	</button>
+</div>
+
+<app-matching-quiz-editor [quiz]="quiz"
+						  *ngIf="quiz.value.mode === 'EDIT'"></app-matching-quiz-editor>
+
+<app-matching-quiz-game [quiz]="quiz"
+						*ngIf="quiz.value.quiz !== null && quiz.value.mode === 'PLAY'"></app-matching-quiz-game>

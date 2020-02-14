@@ -1,0 +1,82 @@
+<h3>New Matching Quiz</h3>
+<div class="matching-quiz-file-button-area">
+	<button class="btn btn-outline-info"
+			(click)="setPlayMode()">Play</button>
+	<a class="btn btn-outline-primary"
+	   target="_blank"
+	   [href]="url"
+	   [download]="quiz.value.quiz.name + '.json'"
+	   [ngClass]="{
+	   	'disabled': url === undefined || url === null
+	   }">Save</a>
+</div>
+<div class="form-group">
+	<label>
+		Name
+		<input type="text"
+			   class="form-control"
+			   pattern="^([a-zA-Z0-9\\_\\-\\s]){1,50}$"
+			   minlength="1"
+			   maxlength="50"
+			   placeholder="Animal noises"
+			   [(ngModel)]="quiz.value.quiz.name"
+			   (change)="updateJson()"
+			   required/>
+	</label>
+</div>
+<div class="form-group count-to-show">
+	<label>
+		Count to Show
+		<input type="range"
+			   class="form-control-range"
+			   min="2"
+			   max="25"
+			   [(ngModel)]="quiz.value.quiz.countToShow"
+			   (change)="updateJson()"
+			   required/>
+		<input type="text"
+			   class="form-control"
+			   [value]="quiz.value.quiz.countToShow"
+			   readonly/>
+	</label>
+</div>
+<div class="matching-quiz-entries">
+	<div class="matching-quiz-entry"
+		 *ngFor="let entry of quiz.value.quiz.entries; index as entryIndex">
+		<button type="button"
+				class="btn btn-sm btn-outline-danger"
+				(click)="deleteEntry(entryIndex)">X
+		</button>
+		<div class="matching-quiz-entry-inner-area">
+			<div class="form-group">
+				<label>
+					Word/Phrase
+					<input type="text"
+						   class="form-control"
+						   pattern="^([a-zA-Z0-9\\_\\-\\s]){1,50}$"
+						   minlength="1"
+						   maxlength="50"
+						   placeholder="Dog"
+						   [(ngModel)]="entry.word"
+						   (change)="updateJson()"
+						   required/>
+				</label>
+			</div>
+			<div class="form-group">
+				<label>
+					Definition
+					<textarea class="form-control"
+							  placeholder="Either a 'arf' or 'woof' sound"
+							  [(ngModel)]="entry.definition"
+							  (change)="updateJson()"
+							  required></textarea>
+				</label>
+			</div>
+		</div>
+	</div>
+	<button type="button"
+			class="btn btn-outline-success"
+			(click)="addEntry()"
+			(change)="updateJson()">Add
+	</button>
+</div>

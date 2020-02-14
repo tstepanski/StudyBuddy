@@ -1,0 +1,10 @@
+.matching-quiz-load-button-area {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+}
+
+.matching-quiz-load-button-area button {
+	margin-right: 5px;
+	margin-left: 5px;
+}

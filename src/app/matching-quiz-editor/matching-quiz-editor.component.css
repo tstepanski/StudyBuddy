@@ -1,0 +1,43 @@
+.matching-quiz-entry {
+	border: lightgrey solid thin;
+	border-radius: 15px;
+	width: 325px;
+	padding: 25px;
+	margin-bottom: 10px;
+}
+
+.count-to-show .form-control {
+	width: 50px;
+}
+
+.count-to-show .form-control-range {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 230px;
+}
+
+.matching-quiz-file-button-area {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+
+.matching-quiz-file-button-area button {
+	margin-right: 10px;
+}
+
+a.btn-outline-primary.disabled {
+	cursor: not-allowed;
+}
+
+.matching-quiz-entry .btn-outline-danger {
+	float: right;
+}
+
+.matching-quiz-entry-inner-area input {
+	width: 230px;
+}
+
+.matching-quiz-entry-inner-area textarea {
+	width: 230px;
+}

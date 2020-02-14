@@ -1,0 +1,11 @@
+.matching-quiz-game-word {
+	border: lightgrey solid thin;
+	border-radius: 15px;
+	padding: 25px;
+	margin-bottom: 10px;
+}
+
+.game-button-area button {
+	margin-left: 10px;
+	margin-bottom: 10px;
+}

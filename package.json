@@ -1,0 +1,38 @@
+{
+  "name": "study-buddy",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "build": "ng build --configuration production"
+  },
+  "main": "electron.js",
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "latest",
+    "@angular/cdk": "latest",
+    "@angular/common": "latest",
+    "@angular/compiler": "latest",
+    "@angular/core": "latest",
+    "@angular/forms": "latest",
+    "@angular/localize": "latest",
+    "@angular/platform-browser": "latest",
+    "@angular/platform-browser-dynamic": "latest",
+    "@angular/router": "latest",
+    "@ng-bootstrap/ng-bootstrap": "^5.2.3",
+    "rxjs": "~6.5.4",
+    "tslib": "^1.10.0",
+    "uuid": "^3.4.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.900.2",
+    "@angular/cli": "latest",
+    "@angular/compiler-cli": "latest",
+    "@angular/language-service": "latest",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^5.1.2",
+    "ts-node": "~8.3.0",
+    "tslint": "~5.18.0",
+    "typescript": "~3.7.5"
+  }
+}
